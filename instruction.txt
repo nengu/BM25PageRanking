@@ -1,0 +1,30 @@
+Neng Gu
+CMPSCI446 hw5
+25939297
+
+I wrote the hashtable and put them together with BM algo in the BM.cpp
+So we don't need additional make file, a command g++ -g -o BM BM.cpp will be fine or we can run in VC++, DevCpp.   
+
+For query 1-7, we need to quote code in main() that you don't want and unquote the code for query you want,
+ say , unqoete it for use
+//Query 2 
+	//code optim for space effici
+	/*
+	for(int i=1;i<=docNum;i++)
+  	{   k=1.2*(0.25+0.75*(dl[i]/avdl));
+  		bmResult[i][1]=i;
+  		bmResult[i][0]=getBM(n[qhash("code")] , hs.findFi("code",i) , k  );
+  		bmResult[i][0]+=getBM(n[qhash("optim")] , hs.findFi("optim",i) , k  );
+  		bmResult[i][0]+=getBM(n[qhash("for")] , hs.findFi("for",i) , k  );
+		bmResult[i][0]+=getBM(n[qhash("space")] , hs.findFi("space",i) , k  );
+  		bmResult[i][0]+=getBM(n[qhash("effici")] , hs.findFi("effici",i) , k  );
+  	}
+	*/
+And we need to change query id in order to output the query id correctly in the end of the main() method
+
+  	for(int i=1;i<=100;i++)
+  	{
+  		printf("query_id %d Q0 doc_id %d rank %d BM25_score %f system_name\n",1,(int)bmResult[i][1],i,bmResult[i][0]);
+  	}
+
+It should take several seconds to finish running.
